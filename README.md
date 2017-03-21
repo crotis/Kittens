@@ -4,6 +4,13 @@ My Message:
 	experianced with React, JS and even with web-development in general it has meant for quite a steep
 	learning curve in such a short period!
 
+	
+
+Instructions on downloading and viewing the Application:
+	I don't currently have a server I can use so we will be running the Application in localhost.
+	Clone the repository to your desired directory.
+	Go to kittens/src then open Index.html
+
 
 
 The Application:
