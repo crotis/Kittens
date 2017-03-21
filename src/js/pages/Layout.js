@@ -6,26 +6,20 @@ import {createStore, applyMiddleware} from 'redux';
 import thunk from 'react-redux';
 import promise from 'redux-promise';
 import createLogger from 'redux-logger';
-import allReducers from './reducers';
+import allReducers from '../reducers';
 
 import Footer from "../components/layout/Footer";
 import Nav from "../components/layout/Nav";
 
-
-var store = createStore(allReducers);
-
+//Contains and handles the layout of all other components
 export default class Layout extends React.Component {
   render() {
-
-    // const store = createStore(allReducers);
-
     const containerStyle = {
       marginTop: "60px"
     };
     console.log("layout");
     return (
       <div>
-
         <Nav location={location} />
         <div class="container" style={containerStyle}>
           <div class="row">
@@ -39,7 +33,6 @@ export default class Layout extends React.Component {
           <Footer/>
         </div>
       </div>
-
     );
   }
 }
