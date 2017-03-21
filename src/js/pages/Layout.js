@@ -20,6 +20,7 @@ export default class Layout extends React.Component {
     console.log("layout");
     return (
       <div>
+      <center>
         <Nav location={location} />
         <div class="container" style={containerStyle}>
           <div class="row">
@@ -32,6 +33,7 @@ export default class Layout extends React.Component {
           </div>
           <Footer/>
         </div>
+        </center>
       </div>
     );
   }
