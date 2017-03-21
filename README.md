@@ -57,19 +57,19 @@ The Application:
 
 DEVELOPER CONCERNS:
 
-	Requirments (These should all be intalled via npm in the projects working directory): 
+	Requirments (These should all be installed via npm in the projects working directory): 
 		React 
-		react-router (For Directing between components)
-		Redux (For Immuntable objects Store object)
-		webpack - Bundler for modules, also allows live updating of applcation via command:
+		react-router (For directing between components)
+		Redux (For Immuntable Store object)
+		webpack - Bundler for modules, also allows live updating of application via command:
 				  "webpack --watch"
 
 	Scripts:
-		I added "dev: {"webpack-dev-server --content-base src --inline --hot"} to package.json to allow us
-		for simpler comilation: simply run the command "npm run dev"
+		I added "dev: {"webpack-dev-server --content-base src --inline --hot"} to package.json 
+		This will allow for simpler compilation: simply run the command "npm run dev"
 
 	Development:
-		When developing run in seprate terminals the following commands (Their uses are described above):
+		When developing, run in seprate terminals the following commands (Their uses are described above):
 		cd <projects working directory>
 		npm run dev 
 		watchman --watch
