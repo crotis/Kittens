@@ -1,6 +1,7 @@
 import { EventEmitter } from "events";
 import dispatcher from "../dispatcher";
 
+//Store Creation and manipulation 
 class KittenStore extends EventEmitter {
   constructor() {
     super()
