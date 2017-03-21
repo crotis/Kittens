@@ -86,7 +86,7 @@ export default class Paste extends React.Component {
           </div>
           <div class="column">
           <br />
-            <textarea rows="1" placeholder={this.state.data}></textarea>
+            <textarea rows="1" placeholder={"kitties/chillin.png"}></textarea>
           </div>
         </form>
         </div>
