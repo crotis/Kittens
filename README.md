@@ -1,8 +1,12 @@
 My Message: 
 
-	hey guys! I've had a great time developing this application, although since i have very little 
-	experianced with React, JS and even with web-development in general it has meant for quite a steep
-	learning curve in such a short period!
+	Hey guys! I've had a great time developing the application I now lovingly call "Kitty-Paste!". 
+	There was a slight learning curve at first with React but I've come to really enjoy using the Library!
+
+	As of midday Tuesday (21/03/2017) it will have been 48 hours since I started developing the application,
+	so I wanted to give you an idea of where I'm currently at.
+	I do however plan on continuing with development and updating the project repository untill completion!
+	So I hope the work so far is to your satisfaction!
 
 
 
@@ -15,11 +19,6 @@ View Application:
 
 
 The Application:
-
-	As of midday Tuesday (21/03/2017) it will have been 48 hours since I started developing the application,
-	so I wanted to give you an idea of where I'm currently at.
-	I do however plan on continuing with development and updating the project repository untill completion!
-	So I hope the work so far is to your satisfaction!
 
 	I currently have the application working as a SPA (single-page-application). Each component 
 	(Kittens, Paste and Info) are imported into the 'Layout' component which handles the overall layout of
