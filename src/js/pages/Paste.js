@@ -14,6 +14,7 @@ export default class Paste extends React.Component {
       username : "",
       password : "",
       data : "",
+      // response: "",
       //Array in which Kitten URL's are saved after component mounts
       //Data initialized after image clicked in Kitten component
       kitten: KittenStore.getAll(),
@@ -37,6 +38,7 @@ export default class Paste extends React.Component {
   //Triggered when component mounts, posts data to PasteBin
   //Currently get bad response
   componentDidMount() {
+    // var tempResp;
     // fetch('http://pastebin.com/api/api_post.php', {
     //   method: 'POST',
     //   //This alows us to overcome Access-Control-Allow-Origin issue
@@ -45,15 +47,23 @@ export default class Paste extends React.Component {
     //      "Content-Type": "application/x-www-form-urlencoded"
     //   },
     //   body: JSON.stringify({
-    //      api_dev_key: getTextFromFile("../../../DevKey"),
+    //     api_dev_key: "",
     //     api_option: 'paste',
     //     api_paste_code: 'test',
     //   })
-    //
-    // })
-    //   .then(function(response) {
+    // }).then((response) => response.json())
+    //   .then((responseJson) => {
     //     console.log(response);
+    //     console.log(responseJson);
+    //     return responseJson;
+    //   })
+    //   .catch((error) => {
+    //     // console.error(error);
+    //   });
+    // .then(function(response) {
+    //     console.log("PASTEBIN RESPONSE: " + response);
     //   }).catch(function(error) {
+    //     console.log("PASTEBIN ERROR RESPONSE: " + response.body);
     //     console.log('Request failed', error)
     //   });
   }
@@ -81,6 +91,29 @@ export default class Paste extends React.Component {
                 <br />
                 <input type="password" name="password" value={this.state.email} onChange={this.handllePasswordChange}/>
               </label><br />
+              <label>
+              Expires:
+              <select>
+                <option value="never">Never</option>
+                <option value="tenMin">10 Mintues</option>
+                <option value="oneHour">1 Hour</option>
+                <option value="oneDay">1 Day</option>
+                <option value="oneWeek">1 week</option>
+                <option value="twoWeeks">2 Week</option>
+                <option value="oneMonth">1 Month</option>
+              </select>
+              </label>
+              <br />
+              <label>
+              Exposure:
+              <select>
+                <option value="unlisted">Unlisted</option>
+                <option value="public">Public</option>
+                <option value="private">Private</option>
+                <option value="oneDay"></option>
+              </select>
+              </label>
+              <br /><br />
             <input type="submit" value="Submit" onSubmit={this.handleSubmit} />
             <br />
           </div>

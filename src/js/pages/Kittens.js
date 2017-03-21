@@ -47,7 +47,7 @@ export default class Kittens extends React.Component {
           <Link to="paste"><img style={{width: 200, height: 200}} src={'https://devtest.tailify.com/' + item.path}/></Link>
         </li>
       );
-  
+
       return (
         <div>
           <h3>Choose a Kitten to sent to PasteBin!</h3>
