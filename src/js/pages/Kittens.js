@@ -1,25 +1,18 @@
 import React from "react";
 import { IndexLink, Link } from "react-router";
-
 import Fetch from 'react-fetch';
+
+import KittenStore from "../../stores/KittenStore";
 
 export default class Kittens extends React.Component {
     constructor(props) {
       super(props);
       this.state = {
-        kitties : [],
+        kitten: [],
       };
       propTypes: {
         onClick: React.PropTypes.func
       }
-    }
-
-    navigate() {
-      console.log("I will be executed, only if props.onClick was not specified");
-    }
-
-    passInfo() {
-      console.log("passInfo");
     }
 
     componentWillMount() {}
@@ -30,8 +23,7 @@ export default class Kittens extends React.Component {
           .then((response) => response.json())
           .then((responseJson) => {
             this.setState({
-
-              kitties : Object.values(responseJson)
+              kitten : Object.values(responseJson)
             });
           })
           .catch((error) => {
@@ -44,16 +36,16 @@ export default class Kittens extends React.Component {
 
 
     render (){
-      var kitties = this.state.kitties.map((item, key) =>
+      console.log(this.state.kitten);
+      var kitten = this.state.kitten.map((item, key) =>
         <Link to="paste">
           <li key={key}>
-            <img style={{width: 200, height: 200}} src={'https://devtest.tailify.com/' + item.path} onClick={this.navigate()}/>
+            <img style={{width: 200, height: 200}} src={'https://devtest.tailify.com/' + item.path}/>
           </li>
         </Link>);
-
       return (
         <div>
-          <ul>{kitties}</ul>
+          <ul>{kitten}</ul>
           { this.props.children }
         </div>
       );
