@@ -1,6 +1,13 @@
-PROCEEDURE:
+INSTRUCTIONS TO RUN:
 
-SETUP
+Create a file a txt file named "DevKey" inside the Directory "Kittens", and put your raw Developer Key for PasteBin here. This can be found when your logged into your PasteBin Account at the top of their API page.
+
+open src/index.html
+
+ 
+
+
+DEVELOPER SETUP:
 
 Go to desired project directory
 Run the following in $bash:
@@ -20,7 +27,9 @@ bash tab2: webpack --watch (Allows for automatic updates to app so we dont have 
 Added Babel Dependencies to Package.json
 Added modules to webpack.config.js (SPECIFY)
 
-*******
-
 npm install pastebin-js
 add module for ^ to package.json
+
+
+
+

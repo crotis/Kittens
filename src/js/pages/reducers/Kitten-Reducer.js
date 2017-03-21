@@ -3,7 +3,8 @@ export default function() {
         {
             "path":"kitties\/chillin.png"
         },
-        {   "path":"kitties\/img1.jpg"
+        {
+          "path":"kitties\/img1.jpg"
         },
         {
             "path":"kitties\/in_bed.jpg"

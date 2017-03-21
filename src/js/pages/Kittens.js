@@ -30,7 +30,7 @@ export default class Kittens extends React.Component {
           .then((response) => response.json())
           .then((responseJson) => {
             this.setState({
-              // kitties : responseJson
+
               kitties : Object.values(responseJson)
             });
           })
