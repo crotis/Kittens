@@ -43,11 +43,11 @@ export default class Kittens extends React.Component {
     render (){
       console.log(KittenStore.getAll());
       var kitten = this.state.kitten.map((item, key) =>
-        <Link to="paste">
-          <ul key={key} class="columns" data-columns="1">
-            <img style={{width: 200, height: 200}} src={'https://devtest.tailify.com/' + item.path}/>
-          </ul>
-        </Link>);
+        <li key={key} data-columns="4">
+          <Link to="paste"><img style={{width: 200, height: 200}} src={'https://devtest.tailify.com/' + item.path}/></Link>
+        </li>
+      );
+  
       return (
         <div>
           <h3>Choose a Kitten to sent to PasteBin!</h3>
