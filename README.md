@@ -55,7 +55,7 @@ The Application:
 
 
 
-DEVELOPER CONCERNS:
+Developer Concerns:
 
 	Requirments (These should all be installed via npm in the projects working directory): 
 		React 
