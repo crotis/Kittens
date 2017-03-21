@@ -9,10 +9,8 @@ My Message:
 View Application:
 
 	I don't currently have a server I can use so we will be running the Application in localhost.
-	npm install
-	npm install -S webpack-dev-server
 	Clone the repository to your desired directory.
-	Go to kittens/src then open Index.html
+	Go to kittens/src then open Index.html (preferebly in chrome)
 
 
 
