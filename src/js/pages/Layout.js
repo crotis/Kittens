@@ -17,7 +17,9 @@ export default class Layout extends React.Component {
     const containerStyle = {
       marginTop: "60px"
     };
+
     console.log("layout");
+
     return (
       <div>
       <center>
@@ -26,9 +28,7 @@ export default class Layout extends React.Component {
           <div class="row">
             <div class="col-lg-12">
               <h1>Kittens!</h1>
-
               {this.props.children}
-
             </div>
           </div>
           <Footer/>
@@ -38,38 +38,3 @@ export default class Layout extends React.Component {
     );
   }
 }
-
-// const logger = createLogger();
-// const store = createStore(
-//   allReducers,
-//   applyMiddleware(thunk, promise, logger)
-// );
-
-
-// const Layout = () => {
-//     // const store = createStore(allReducers);
-//
-//     const containerStyle = {
-//       marginTop: "60px"
-//     };
-//     console.log("layout");
-//     return (
-//       <div>
-//
-//         <Nav location={location} />
-//
-//         <div class="container" style={containerStyle}>
-//           <div class="row">
-//             <div class="col-lg-12">
-//               <h1>Kitten-Paste!?</h1>
-//
-//               {this.props.children}
-//
-//             </div>
-//           </div>
-//           <Footer/>
-//         </div>
-//       </div>
-//
-//     );
-//   }

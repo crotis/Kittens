@@ -1,12 +1,8 @@
 My Message: 
 
 	Hey guys! I've had a great time developing the application I now lovingly call "Kitty-Paste!". 
-	There was a slight learning curve at first with React but I've come to really enjoy using the Library!
-
-	As of midday Tuesday (21/03/2017) it will have been 48 hours since I started developing the application,
-	so I wanted to give you an idea of where I'm currently at.
-	I do however plan on continuing with development and updating the project repository untill completion!
-	So I hope the work so far is to your satisfaction!
+	There was a slight learning curve at first with React but I've come to really enjoy using the Library
+	so I hope the work so far is to your satisfaction!
 
 
 
@@ -20,37 +16,36 @@ View Application:
 
 The Application:
 
-	I currently have the application working as a SPA (single-page-application). Each component 
-	(Kittens, Paste and Info) are imported into the 'Layout' component which handles the overall layout of
-	the application.
+	I currently have the application working as a SPA (single-page-application). 
+	The components are structured into a single paged application in 'index.js' using
+	React libraries (Router, Route, IndexRoute & hashHistory).
 
-	The 'Kittens' tab when loaded for the first time calls the Devtest API and retrieves the URL's.
-	This data is then saved into the components state, mapped and rendered.
-	When one of the Kitten images is clicked, the 'Paste' component is fired and will recieve the relevent 
-	image data. Currently the Paste component opens but the data is not recieved, Im currently working with
-	'React Flux' to make the data availible to the component and its not far from working!
+	The 'Layout' component simply handles the overall layout of all other components: 
+	(Kitten, Info, Header and Footer).
 
-	The 'Paste' component will allow the user to input their credentials as well as to specify options such 
-	as (public/private, duration). The user can then create a new pastebin post from this data! If no data,
-	or no user credentials are specified, the app will use defauls and/or an anonymous post.
-	Unfortunately currently the post aren't working, I ran into some issue with an 
-	'Access-Control-Allow-Origin' error, which means you can't access the API from certain origins,
-	(such as a localhost) which is what I've been using for development! I've gotten past the error but am
-	still having issues with bad responses. I have gotten good responses and created pastes via API mapping
-	using Postman but I have yet to do so in the application.
+	The Kitten component is where the real fun happens. When this component mounts it automatically sends
+	a GET request to DevTests API to receive the kitten paths. The JSON array is iterated through and 
+	img tages are created for each path and injected into the HTML.
 
-	The 'Info' component just provides a fun page to read this message, which is also in the 'README.md'
-	file in the GitHub Repository.
+	The user is then able to click any of these images. Upon doing so a POST request is sent to the 
+	DevTest API and the response is made availible in the textarea's. This also required converting an 
+	array of characters to a string (which also got rid of all the commers in the response). I refactored
+	this method into Util/Tools and imported it into the class.
+
+	The 'Info' component just provides a fun page to read this information, which is also in the
+	'README.md'file in the GitHub Repository.
 
 
 
-	Further Development:
+Further Development:
 
-		I am disappointed I did not get further in the 48 hours, however I plan on continuing the
-		applications development and completing the following:
-			-FLUX data storage
-			-PasteBin Posts and displaying the response data such as the PasteBin link
-			-Unit and Itegration Testing
+	I'm in the process of removing the' "undefined" in the textbox. I think the problem occurs when the 
+	components state updates after the second API call.
+	I usually add unit and integration tests to my code as I go (TDD style). Since I was using a new 
+	framework I thought this might be abit much to begin with. Though in retrospect I think it would of helped
+	me rather than hindered me! Unfortunately I didn't get round to adding the tests. I have looked into testing
+	using Enzym, Expect and Mocha and will be adding them over the next few days as well as cleaning up the code 
+	and improving the API.
 
 
 
@@ -59,7 +54,7 @@ Developer Concerns:
 	Requirments (These should all be installed via npm in the projects working directory): 
 		React 
 		react-router (For directing between components)
-		Redux (For Immuntable Store object)
+		Flux
 		webpack - Bundler for modules, also allows live updating of application via command:
 				  "webpack --watch"
 
