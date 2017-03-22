@@ -16,16 +16,15 @@ View Application:
 
 The Application:
 
-	I currently have the application working as a SPA (single-page-application). 
 	The components are structured into a single paged application in 'index.js' using
 	React libraries (Router, Route, IndexRoute & hashHistory).
 
 	The 'Layout' component simply handles the overall layout of all other components: 
 	(Kitten, Info, Header and Footer).
 
-	The Kitten component is where the real fun happens. When this component mounts it automatically sends
-	a GET request to DevTests API to receive the kitten paths. The JSON array is iterated through and 
-	img tages are created for each path and injected into the HTML.
+	The Kitten component is where the real fun happens! When this component mounts it automatically 
+	sends a GET request to DevTests API and recieves the image paths in the response. The JSON array is
+	iterated through and img tages are created for each path and injected into the HTML.
 
 	The user is then able to click any of these images. Upon doing so a POST request is sent to the 
 	DevTest API and the response is made availible in the textarea's. This also required converting an 
@@ -39,13 +38,14 @@ The Application:
 
 Further Development:
 
-	I'm in the process of removing the' "undefined" in the textbox. I think the problem occurs when the 
-	components state updates after the second API call.
-	I usually add unit and integration tests to my code as I go (TDD style). Since I was using a new 
+	I'm in the process of removing the "undefined" text which appears in the textbox before the POST response.
+	I think the problem occurs when the components state updates after the second API call.
+
+	I usually add unit and integration tests to my code as I go (TDD style). However since I was using a new 
 	framework I thought this might be abit much to begin with. Though in retrospect I think it would of helped
-	me rather than hindered me! Unfortunately I didn't get round to adding the tests. I have looked into testing
-	using Enzym, Expect and Mocha and will be adding them over the next few days as well as cleaning up the code 
-	and improving the API.
+	me rather than hindered me! Unfortunately I haven't yet managed to add the tests. I have looked into testing
+	using Enzym, Expect and Mocha and will be adding them over the next day or so as well as cleaning up the code 
+	and improving on the UI.
 
 
 
