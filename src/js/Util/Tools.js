@@ -1,19 +1,13 @@
-// var getTextFromFile = function(file)
-// {
-//     var rawFile = new XMLHttpRequest();
-//     rawFile.open("GET", file, false);
-//     rawFile.onreadystatechange = function ()
-//     {
-//         if(rawFile.readyState === 4)
-//         {
-//             if(rawFile.status === 200 || rawFile.status == 0)
-//             {
-//                 var allText = rawFile.responseText;
-//                 return allText;
-//             }
-//         }
-//     }
-//     rawFile.send(null);
-// }
-//
-// export default getTextFromFile;
+var arrayToString = function(arr)
+{
+  var str;
+  var i;
+
+  for (i=0; i<arr.length; i++){
+    str += arr[i];
+  }
+  // str.replace("undefined", "");
+  return str;
+}
+
+export default arrayToString;

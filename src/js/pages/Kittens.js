@@ -5,6 +5,8 @@ import FileReaderInput from 'react-file-reader-input';
 
 import * as KittenAction from "../actions/KittenActions"
 import KittenStore from "../stores/KittenStore";
+import arrayToString from "../Util/Tools";
+import DTgetRequest from "../Util/Fetch";
 
 //Component handles retrieval and rendering of Kitten images
 export default class Kittens extends React.Component {
@@ -19,7 +21,6 @@ export default class Kittens extends React.Component {
       };
       //Binds postKitten method to this
       this.postKitten = this.postKitten.bind(this);
-      this.arrayToString = this.arrayToString.bind(this);
     }
 
     //Triggered when component mounts, gets Kitten URL's from devtest API
@@ -37,8 +38,6 @@ export default class Kittens extends React.Component {
     }
 
     postKitten() {
-      FileReaderInput
-
       var path  = "kitties/img1.jpg";
       //Usually I'd never hardcore a key in but for simplicity
       var key = "2d9fec7ea5adf12306b7476a45c84990"
@@ -66,54 +65,31 @@ export default class Kittens extends React.Component {
       });
     }
 
-    //Converts array of chars into string and (effectively removing commers in textarea)
-    arrayToString(arr){
-      var str;
-      var i;
-
-      for (i=0; i<arr.length; i++){
-        str += arr[i];
-      }
-      return str;
-    }
-
-
   render (){
       console.log("RESPONSE KITTENS: " + this.state.kitten);
       console.log("RESPONSE POST: " + this.state.post);
       console.log("RESPONSE filename: " + this.state.filename);
       console.log("RESPONSE message: " + this.state.message);
+
+      //Adds unique keys to Kitten array
+      //Maps Array of Kitten paths into nested image tags.
       var kitten = this.state.kitten.map((item, key) =>
         <li key={key} data-columns="2">
             <img style={{width: 200, height: 200}} src={'https://devtest.tailify.com/' + item.path} onClick={this.postKitten}/>
         </li>
       );
 
-      // const reactStringReplace = require('react-string-replace')
-      // reactStringReplace('undefined', '', ({this.state.name}, i) => (
-      //   <span>{match}</span>
-      // ));
-
       //Converts array of chars into string and removes commers
       if (this.state.filename!=null){
-        var name = this.arrayToString(this.state.filename);
+        var name = arrayToString(this.state.filename);
         console.log("RESPONSE name: " + name);
       }
 
       //Converts array of chars into string and removes commers
       if (this.state.message!=null){
-        var msg = this.arrayToString(this.state.message);
+        var msg = arrayToString(this.state.message);
         console.log("RESPONSE msg: " + msg);
       }
-
-      // var filename = this.state.filename.replace(",", "");
-      // var message = this.state.message.replace(",", "");
-      // var filename = this.state.filename.map((item, i, arr) => {
-      //     let divider = i<arr.length-1 && <div>|</div>;
-      //
-      // var message = this.state.message.map((item, i, arr) => {
-      //     let divider = i<arr.length-1 && <div>|</div>;
-
 
       return (
         <div>
@@ -121,6 +97,7 @@ export default class Kittens extends React.Component {
           <div class="cont1">
             <ul>{kitten}</ul>
           </div>
+          <h5>API Response:</h5>
           <textarea rows="1" cols="32"  value = {name} placeholder={"Filename sent will show here"}></textarea>
           <br />
           <textarea rows="2" cols="32"  value = {msg} placeholder={"Return message will show here"}></textarea>
