@@ -3,7 +3,6 @@ import { IndexLink, Link } from "react-router";
 import Fetch from 'react-fetch';
 
 import * as KittenAction from "../actions/KittenActions"
-import KittenStore from "../stores/KittenStore";
 import arrayToString from "../Util/Tools";
 
 //Component handles retrieval and rendering of Kitten images
@@ -33,7 +32,7 @@ export default class Kittens extends React.Component {
           .catch((error) => {
             console.error(error);
           });
-    }
+    } 
 
     postKitten() {
       var path  = "kitties/img1.jpg";
