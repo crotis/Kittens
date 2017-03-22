@@ -38,10 +38,9 @@ export default class Info extends React.Component {
         array of characters to a string (which also got rid of all the commers in the response). I refactored
         this method into Util/Tools and imported it into the class.
     </p>
+    <p>
         The 'Info' component just provides a fun page to read this information, which is also in the
         'README.md'file in the GitHub Repository.
-    <p>
-
     </p>
 
         <h3>Further Development:</h3>
@@ -56,7 +55,7 @@ export default class Info extends React.Component {
 	        me rather than hindered me! Unfortunately I haven't yet managed to add the tests. I have looked into testing
 	        using Enzym, Expect and Mocha and will be adding them over the next day or so as well as cleaning up the code
 	        and improving on the UI.
-       <p>
+       </p>
 
      <h3>Developer Concers:</h3>
      <h4>
