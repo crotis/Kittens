@@ -13,13 +13,16 @@ export default class Kittens extends React.Component {
         //Array in which Kitten URL's are saved after component mounts
         //Data initialized via method: componentDidMount
         kitten: [],
+        filename: "",
+        message: "",
       };
+      //Binds postKitten method to this
+      this.postKitten = this.postKitten.bind(this);
     }
 
     //Triggered when component mounts, gets Kitten URL's from devtest API
     componentDidMount() {
       return fetch('https://devtest.tailify.com/api/list')
-        // .then(CheckHttpStatus)
           .then((response) => response.json())
           .then((responseJson) => {
             this.setState({
@@ -29,29 +32,57 @@ export default class Kittens extends React.Component {
           .catch((error) => {
             console.error(error);
           });
-
-          //Creates Kittens in KittenStore
-          // this.createKitten.bind(this) = this.state.kitten;
     }
-    //Currently unecessary state change methods
-    // componentWillMount() {}
-    // componentWillReceiveProps(nextProps) {}
-    // componentWillUpdate(nextProps, nextState) {}
-    // componentWillUnmount() {}
 
+    postKitten() {
+      var path  = "kitties/img1.jpg"
+      var key = "********";
+      var url = "https://devtest.tailify.com/api/upload/" +
+                "?filename=" + path +
+                "&pastebin_api_key=" + key;
+      fetch(url, {
+        method: 'POST',
+        headers: {
+        },
+        body: JSON.stringify({
+        })
+        }).then((response) => response.json())
+        .then((responseJson) => {
+        this.setState({
+          post:  Object.values(responseJson),
+          filename: Object.values(responseJson.filename),
+          message: Object.values(responseJson.message),
+        });
+        this.render();
+      })
+      .catch((responseJson) => {
+        this.setState({
+          post:  Object.values(responseJson),
+          filename: Object.values(responseJson.filename),
+          message: Object.values(responseJson.message),
+        });
+      });
+      // this.render();
+    }
 
     render (){
-      console.log(KittenStore.getAll());
+      console.log("RESPONSE KITTENS: " + this.state.kitten);
+      console.log("RESPONSE POST: " + this.state.post);
+      console.log("RESPONSE filename: " + this.state.filename);
+      console.log("RESPONSE message: " + this.state.message);
       var kitten = this.state.kitten.map((item, key) =>
-        <li key={key} data-columns="2"> 
-          <Link to="paste"><img style={{width: 200, height: 200}} src={'https://devtest.tailify.com/' + item.path}/></Link>
+        <li key={key} data-columns="2">
+            <img style={{width: 200, height: 200}} src={'https://devtest.tailify.com/' + item.path} onClick={this.postKitten}/>
         </li>
       );
 
       return (
         <div>
-          <h3>Choose a Kitten to sent to PasteBin!</h3>
+          <h5>Click on your favorite picture and post to Tailify!</h5><br />
           <ul>{kitten}</ul>
+          <textarea rows="1" cols="32"  value = {this.state.filename} placeholder={"Filename sent will show here"}></textarea>
+          <br />
+          <textarea rows="2" cols="32"  value = {this.state.message} placeholder={"Return message will show here"}></textarea>
           { this.props.children }
         </div>
       );
