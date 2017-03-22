@@ -2,7 +2,7 @@ My Message:
 
 	Hey guys! I've had a great time developing the application I now lovingly call "Kitty-Paste!". 
 	There was a slight learning curve at first with React but I've come to really enjoy using the Library
-	so I hope the work so far is to your satisfaction!
+	so I hope that my work is to your satisfaction!
 
 
 
