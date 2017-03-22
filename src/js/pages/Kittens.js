@@ -1,12 +1,10 @@
 import React from "react";
 import { IndexLink, Link } from "react-router";
 import Fetch from 'react-fetch';
-import FileReaderInput from 'react-file-reader-input';
 
 import * as KittenAction from "../actions/KittenActions"
 import KittenStore from "../stores/KittenStore";
 import arrayToString from "../Util/Tools";
-import DTgetRequest from "../Util/Fetch";
 
 //Component handles retrieval and rendering of Kitten images
 export default class Kittens extends React.Component {
