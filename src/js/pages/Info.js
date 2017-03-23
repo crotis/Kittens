@@ -57,27 +57,6 @@ export default class Info extends React.Component {
 	        using Enzym, Expect and Mocha and will be adding them over the next day or so as well as cleaning up the code
 	        and improving on the UI.
        </p>
-
-     <h3>Developer Concers:</h3>
-     <h4>
-       Requirments (These should all be installed via npm in the projects working directory):
-     </h4>
-     <li>React</li>
-     <li>react-router (For directing between components)</li>
-     <li>webpack - Bundler for modules, also allows live updating of application via command
-         "webpack --watch"</li>
-
-     <h4>Scripts:</h4>
-     <p>
-       I added "dev: {"webpack-dev-server --content-base src --inline --hot"} to package.json
-       This will allow for simpler compilation: simply run the command "npm run dev"
-     </p>
-     <h4>Development:</h4>
-     <p>When developing, run in seprate terminals the following commands (Their uses are described above):
-     </p>
-     <p>When developing, run the following commans in seperate terminals</p>
-     <li>npm run dev </li>
-     <li>watchman --watch</li>
      </div>
      </div>
    );
