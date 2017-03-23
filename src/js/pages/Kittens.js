@@ -38,7 +38,7 @@ export default class Kittens extends React.Component {
       // var path  = "kitties/img1.jpg";
       var path = itemPath;
       //Usually I'd never hardcore a key in but for simplicity
-      var key = "2d9fec7ea5adf12306b7476a45c84990"
+      var key = "0f284a5491cb85a4636825d93f81c990"
       var url = "https://devtest.tailify.com/api/upload/" +
                 "?filename=" + path +
                 "&pastebin_api_key=" + key;
