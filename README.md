@@ -55,6 +55,7 @@ Developer Concerns:
 
 			npm install
 			npm insatll webpack --save-dev
+			npm install -g webpack
 			npm install -S webpack-dev-server
 			npm install -g webpack-dev-server
 			npm install react-fetch
