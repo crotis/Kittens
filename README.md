@@ -52,11 +52,10 @@ Developer SetpUp:
 			npm install react-fetch
 
 	Run:
-		When developing, run the following commands in separate terminals (their uses are described above):
+		When developing, run the following command in terminal (their uses are described above):
 		(Make sure you have first installed the requirements above!)
 		cd <projects working directory>
 		npm run dev
-		watchman --watch (Allows for automatic updates)
 
 	Scripts:
 		I added "dev: {"webpack-dev-server --content-base src --inline --hot"} to package.json
