@@ -23,46 +23,41 @@ The Application:
 	(Kitten, Info, Header and Footer).
 
 	The Kitten component is where the real fun happens! When this component mounts it automatically
-	sends a GET request to DevTests API and recieves the image paths in the response. The JSON array is
-	iterated through and img tages are created for each path and injected into the HTML.
+	sends a GET request to DevTests API and receives the path of each image. The JSON array is
+	iterated through and <img> tags are created for each path, wrapped and injected into the HTML.
 
 	The user is then able to click any of these images. Upon doing so a POST request is sent to the
-	DevTest API and the response is made availible in the textarea's. This also required converting an
-	array of characters to a string (which also got rid of all the commers in the response). I refactored
-	this method into Util/Tools and imported it into the class.
+	DevTest API and the response is made visible in the text-areas bellow. This also required
+	converting an array of characters to a string. I refactored this method into Util/Tools.
 
-	The 'Info' component just provides a fun page to read this information, which is also in the
-	'README.md'file in the GitHub Repository.
+	The 'Info' component just provides a fun page to read this information, which is also availible
+	in the 'README.md'file in the GitHub Repository.
 
 
 
 Further Development:
 
-	I'm in the process of removing the "undefined" text which appears in the textbox before the POST response.
-	I think the problem occurs when the components state updates after the second API call.
-
 	I usually add unit and integration tests to my code as I go (TDD style). However since I was using a new
-	framework I thought this might be abit much to begin with. Though in retrospect I think it would of helped
-	me rather than hindered me! Unfortunately I haven't yet managed to add the tests. I have looked into testing
-	using Enzym, Expect and Mocha and will be adding them over the next day or so as well as cleaning up the code
-	and improving on the UI.
+	framework I thought this might be little much to begin with. Though in retrospect I think it would of helped
+	me rather than hindered me! Unfortunately I haven't yet managed to add the tests. I have however between
+	looking into testing using Enzym, Expect and Mocha.
 
 
 
-Developer Concerns:
+Developer SetpUp:
 
-	Install Requirments (These should all be installed via npm in the projects working directory):
-
+	Install Requirements (These should all be installed via npm in the projects working directory):
 			npm install
 			npm install flux
 			npm install react-fetch
 
-	Scripts:
-		I added "dev: {"webpack-dev-server --content-base src --inline --hot"} to package.json
-		This will allow for simpler compilation: simply run the command "npm run dev"
-
-	Development:
-		When developing, run in seprate terminals the following commands (Their uses are described above):
+	Run:
+		When developing, run the following commands in separate terminals (their uses are described above):
+		(Make sure you have first installed the requirements above!)
 		cd <projects working directory>
 		npm run dev
 		watchman --watch (Allows for automatic updates)
+
+	Scripts:
+		I added "dev: {"webpack-dev-server --content-base src --inline --hot"} to package.json
+		This will allow for simpler compilation.
