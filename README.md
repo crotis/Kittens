@@ -54,10 +54,9 @@ Developer Concerns:
 	Install Requirments (These should all be installed via npm in the projects working directory):
 
 			npm install
-			npm insatll webpack --save-dev
+			npm install webpack --save-dev
 			npm install -g webpack
-			npm install -S webpack-dev-server
-			npm install -g webpack-dev-server
+			npm install webpack-dev-server
 			npm install react-fetch
 
 	Scripts:
