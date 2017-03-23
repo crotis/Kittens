@@ -32,10 +32,11 @@ export default class Kittens extends React.Component {
           .catch((error) => {
             console.error(error);
           });
-    } 
+    }
 
-    postKitten() {
-      var path  = "kitties/img1.jpg";
+    postKitten(itemPath) {
+      // var path  = "kitties/img1.jpg";
+      var path = itemPath;
       //Usually I'd never hardcore a key in but for simplicity
       var key = "2d9fec7ea5adf12306b7476a45c84990"
       var url = "https://devtest.tailify.com/api/upload/" +
@@ -72,7 +73,7 @@ export default class Kittens extends React.Component {
       //Maps Array of Kitten paths into nested image tags.
       var kitten = this.state.kitten.map((item, key) =>
         <li key={key} data-columns="2">
-            <img style={{width: 200, height: 200}} src={'https://devtest.tailify.com/' + item.path} onClick={this.postKitten}/>
+            <img style={{width: 200, height: 200}} src={'https://devtest.tailify.com/' + item.path} onClick={() =>this.postKitten(item.path)}/>
         </li>
       );
 
@@ -90,7 +91,7 @@ export default class Kittens extends React.Component {
 
       return (
         <div>
-          <h5>Click on your favorite picture and post to Tailify!</h5><br />
+          <h5>Click on your favorite picture and post to Tailify!</h5>
           <div class="cont1">
             <ul>{kitten}</ul>
           </div>

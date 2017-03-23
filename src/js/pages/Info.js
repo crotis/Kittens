@@ -5,9 +5,10 @@ export default class Info extends React.Component {
   render() {
     console.log("info");
     return (
-      <div>
+      <div >
       <br />
 
+      <div class="cont1">
         <h3>My Message:</h3>
         <p>
             Hey guys! I've had a great time developing the application I now lovingly call "Kitty-Paste!".
@@ -77,6 +78,7 @@ export default class Info extends React.Component {
      <p>When developing, run the following commans in seperate terminals</p>
      <li>npm run dev </li>
      <li>watchman --watch</li>
+     </div>
      </div>
    );
  }
