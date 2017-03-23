@@ -28,7 +28,7 @@ export default class Nav extends React.Component {
     <div class="container">
 
 
-      <h1 class="logo"></h1>
+        <t1>KITTEN-PASTE!</t1>
 
       <nav>
         <ul>

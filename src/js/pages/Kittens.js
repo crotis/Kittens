@@ -84,7 +84,6 @@ export default class Kittens extends React.Component {
 
       return (
         <div>
-          <h5>Click on your favorite picture and post to Tailify!</h5>
           <div class="cont1">
             <ul>{kitten}</ul>
           </div>
