@@ -64,11 +64,6 @@ export default class Kittens extends React.Component {
     }
 
   render (){
-      console.log("RESPONSE KITTENS: " + this.state.kitten);
-      console.log("RESPONSE POST: " + this.state.post);
-      console.log("RESPONSE filename: " + this.state.filename);
-      console.log("RESPONSE message: " + this.state.message);
-
       //Adds unique keys to Kitten array
       //Maps Array of Kitten paths into nested image tags.
       var kitten = this.state.kitten.map((item, key) =>
@@ -80,13 +75,11 @@ export default class Kittens extends React.Component {
       //Converts array of chars into string and removes commers
       if (this.state.filename!=null){
         var name = arrayToString(this.state.filename);
-        console.log("RESPONSE name: " + name);
       }
 
       //Converts array of chars into string and removes commers
       if (this.state.message!=null){
         var msg = arrayToString(this.state.message);
-        console.log("RESPONSE msg: " + msg);
       }
 
       return (
