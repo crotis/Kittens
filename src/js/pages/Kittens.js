@@ -73,7 +73,7 @@ export default class Kittens extends React.Component {
       //Maps Array of Kitten paths into nested image tags.
       var kitten = this.state.kitten.map((item, key) =>
         <li key={key} data-columns="2">
-            <img style={{width: 200, height: 200}} src={'https://devtest.tailify.com/' + item.path} onClick={() =>this.postKitten(item.path)}/>
+            <img style={{width: 220, height: 220}} src={'https://devtest.tailify.com/' + item.path} onClick={() =>this.postKitten(item.path)}/>
         </li>
       );
 
