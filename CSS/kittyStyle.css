@@ -13,6 +13,9 @@ p {
     opacity: 0.7;
 }
 
+div.respReq {
+  padding-left: 50px;
+}
 
 
 h5,h4,h3 {
@@ -25,7 +28,6 @@ textarea {
 	border-radius: 10px;
 	height: 30px;
 	width: 206px;
-  resize: none;
 }
 
 body {

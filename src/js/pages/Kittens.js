@@ -87,11 +87,13 @@ export default class Kittens extends React.Component {
           <div class="cont1">
             <ul>{kitten}</ul>
           </div>
+          <div class="respReq">
           <h5>API Response:</h5>
           <textarea rows="1" cols="32"  value = {name} placeholder={"Filename sent will show here"}></textarea>
           <br />
           <textarea rows="2" cols="32"  value = {msg} placeholder={"Return message will show here"}></textarea>
           { this.props.children }
+          </div>
         </div>
       );
     }

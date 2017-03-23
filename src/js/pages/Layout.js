@@ -22,7 +22,9 @@ export default class Layout extends React.Component {
               {this.props.children}
             </div>
           </div>
+          <div class="respReq">
           <Footer/>
+          </div>
         </div>
       </div>
     );
